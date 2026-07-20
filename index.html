@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HANARA Stitch - Rajutan Premium & Kustom Estetik</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=League+Spartan:wght@400;600;700;800&family=Mali:wght@400;600;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        hanara: {
+                            cream: '#FFFBD3',   /* Soft creamy background from brand guide */
+                            red: '#DB4C4C',     /* Dark Coral Red primary accent */
+                            pink: '#EB717B',    /* Medium Coral Pink accent */
+                            lightPink: '#F7D7DB',/* Light soft pink backgrounds */
+                            dark: '#4D1D20',     /* Contrast dark coffee/burgundy for text */
+                            accent: '#FDF2C5'   /* Lighter beige */
+                        }
+                    },
+                    fontFamily: {
+                        caveat: ['"Caveat Brush"', 'cursive'],
+                        poppins: ['Poppins', 'sans-serif'],
+                        mali: ['Mali', 'cursive'],
+                        spartan: ['"League Spartan"', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFFBD3;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #EB717B;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #DB4C4C;
+        }
+
+        /* Continuous subtle float animation for yarn/butterfly elements */
+        @keyframes gentle-float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(3deg); }
+        }
+        .float-animation {
+            animation: gentle-float 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-subtle {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        .pulse-animation {
+            animation: pulse-subtle 3s ease-in-out infinite;
+        }
+
+        /* Repeating brand pattern */
+        .brand-pattern {
+            background-image: url('assets/brand/pattern.png');
+            background-repeat: repeat;
+            background-size: 200px 200px;
+        }
+
+        /* Blended hero pattern with soft cream overlay */
+        .hero-pattern {
+            background-image: linear-gradient(rgba(255, 251, 211, 0.91), rgba(255, 251, 211, 0.91)), url('assets/brand/pattern.png');
+            background-repeat: repeat;
+            background-size: 200px 200px;
+        }
+    </style>
+</head>
+<body class="bg-hanara-cream text-hanara-dark font-poppins selection:bg-hanara-pink selection:text-white overflow-x-hidden">
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky top-0 z-50 bg-[#FFFBD3]/90 backdrop-blur-md border-b-2 border-hanara-lightPink/50 px-4 py-3 md:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Brand Logo Frame -->
+            <a href="#" class="flex items-center group">
+                <img src="assets/brand/LOGO FIX.png" alt="Hanara Stitch Logo" class="h-14 w-auto md:h-20 transition-transform group-hover:scale-105 duration-300">
+            </a>
+
+            <!-- Nav Links (Desktop) -->
+            <div class="hidden md:flex items-center gap-8 font-mali font-bold text-base md:text-lg text-hanara-dark/95">
+                <a href="#katalog" class="hover:text-hanara-red transition-colors flex items-center gap-2"><i class="fa-solid fa-store text-sm text-hanara-pink"></i> Katalog</a>
+                <a href="#cerita" class="hover:text-hanara-red transition-colors flex items-center gap-2"><i class="fa-solid fa-heart text-sm text-hanara-pink"></i> Tentang Kami</a>
+            </div>
+
+            <!-- CTA Button header -->
+            <a href="https://wa.me/6281808014840?text=Halo%20Hanara%20Stitch!%20Saya%20tertarik%20melihat%20koleksi%20rajutan%20Anda." 
+               target="_blank"
+               class="bg-hanara-red hover:bg-hanara-pink text-white font-mali font-bold px-5 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-2 text-sm md:text-base">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Tanya Stok</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Banner Section -->
+    <header class="relative overflow-hidden pt-8 pb-16 px-4 md:px-8 hero-pattern">
+        <!-- Floating Handcrafted Background Elements for Aesthetic Vibe -->
+        <div class="absolute top-10 left-6 text-hanara-pink/20 text-6xl float-animation hidden md:block"><i class="fa-solid fa-circle-nodes"></i></div>
+        <div class="absolute bottom-12 right-12 text-hanara-red/20 text-7xl float-animation hidden md:block" style="animation-delay: 1.5s;"><i class="fa-solid fa-cloud"></i></div>
+        <div class="absolute top-1/2 right-6 text-hanara-pink/20 text-5xl float-animation hidden md:block" style="animation-delay: 2.5s;"><i class="fa-solid fa-heart"></i></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            
+            <!-- Hero Text Content -->
+            <div class="space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 bg-white/85 px-4 py-2 rounded-full shadow-sm border border-hanara-lightPink text-hanara-red font-mali text-xs md:text-sm font-bold">
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-hanara-pink animate-ping"></span>
+                    <span>100% Rajutan Buatan Tangan Hangat & Spesial</span>
+                </div>
+                
+                <h1 class="font-caveat text-6.5xl md:text-8xl text-hanara-red leading-tight drop-shadow-sm">
+                    Stitch with Love,<br>Woven in Warmth
+                </h1>
+                
+                <p class="font-poppins text-base md:text-lg text-hanara-dark/90 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    Selamat datang di <strong class="text-hanara-red font-semibold">HANARA Stitch</strong>. Kami menghadirkan karya seni rajutan premium berkualitas tinggi—mulai dari tas estetik, boneka rajut (amigurumi) yang imut, cardigan, hingga aksesori cantik yang didesain secara khusus hanya untuk Anda.
+                </p>
+
+                <!-- Interactive Dual CTA -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="https://wa.me/6281808014840?text=Halo%20Hanara%20Stitch!%20Saya%20ingin%20memesan%20rajutan%20custom." 
+                       target="_blank"
+                       class="w-full sm:w-auto bg-hanara-red hover:bg-[#C23C3C] text-white font-mali font-bold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 text-lg border-b-4 border-red-800">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Pesan via WhatsApp</span>
+                    </a>
+                    
+                    <a href="#katalog" 
+                       class="w-full sm:w-auto bg-white hover:bg-hanara-lightPink/50 text-hanara-red border-2 border-hanara-pink font-mali font-bold px-8 py-4 rounded-2xl hover:shadow-md transition-all duration-300 flex items-center justify-center gap-2">
+                        <span>Lihat Katalog</span>
+                        <i class="fa-solid fa-arrow-down-long animate-bounce"></i>
+                    </a>
+                </div>
+
+                <!-- Small Trust Indicator -->
+                <div class="pt-4 flex items-center justify-center lg:justify-start gap-6 text-xs text-hanara-dark/70 font-semibold font-mali">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-hanara-pink"></i> Benang Katun Premium</span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-hanara-pink"></i> Jahitan Kuat & Rapih</span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-hanara-pink"></i> Custom Warna Bebas</span>
+                </div>
+            </div>
+
+            <!-- Hero Image Frame with Logo & Showcase -->
+            <div class="flex justify-center items-center relative">
+                <!-- Outer Decorative Frame -->
+                <div class="absolute inset-0 bg-hanara-lightPink rounded-3xl rotate-3 scale-102 opacity-40 shadow-xl"></div>
+                <div class="absolute inset-0 bg-hanara-pink/10 rounded-3xl -rotate-2 scale-100 opacity-60"></div>
+                
+                <div class="relative bg-white p-6 rounded-3xl shadow-xl border-4 border-hanara-lightPink w-full max-w-md md:max-w-lg z-10">
+                    <img src="assets/images/hero.jpg" alt="Logo Hanara Stitch Utama" class="w-full h-auto rounded-2xl mb-4 transition-transform hover:scale-102 duration-300 border border-hanara-cream shadow-inner">
+                    
+                    <!-- Caption box under the main brand image -->
+                    <div class="bg-hanara-cream p-4 rounded-xl border border-hanara-lightPink flex items-center justify-between">
+                        <div>
+                            <h4 class="font-mali font-bold text-hanara-red text-sm">HANARA STITCH OFFICIAL</h4>
+                            <p class="font-poppins text-xs text-hanara-dark/80">Koleksi Rajutan Premium Berdasarkan Brand Guide Resmi</p>
+                        </div>
+                        <div class="bg-white px-2.5 py-1 rounded-full text-xs font-mali font-bold text-hanara-pink border border-hanara-lightPink">
+                            Est. 2026
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Catalog Section -->
+    <section id="katalog" class="py-20 px-4 md:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                <span class="text-hanara-pink font-mali font-bold tracking-widest uppercase text-xs md:text-sm px-3 py-1 bg-hanara-lightPink/40 rounded-full inline-block">Best Seller Collection</span>
+                <h2 class="font-caveat text-5xl md:text-7xl text-hanara-red">Katalog Hasil Karya Estetik</h2>
+                <div class="w-24 h-1 bg-hanara-pink mx-auto rounded-full"></div>
+                <p class="font-poppins text-sm md:text-base text-hanara-dark/80">
+                    Semua karya dibuat dengan penuh ketelitian menggunakan benang rajut bersertifikasi kelembutan tinggi. Pilih salah satu favoritmu dan pesan langsung melalui WhatsApp.
+                </p>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Product 1: Sling Bag -->
+                <div class="bg-hanara-cream rounded-3xl overflow-hidden shadow-md hover:shadow-xl border-2 border-hanara-lightPink hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="relative bg-white/50 border-b border-hanara-lightPink flex justify-center items-center h-64 overflow-hidden">
+                        <img src="assets/images/product_bag.jpg" alt="Aesthetic Hanara Sling Bag" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-hanara-red text-white text-[10px] font-mali font-bold px-3 py-1 rounded-full uppercase">Koleksi Utama</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <span class="text-xs text-hanara-pink font-semibold uppercase font-mali">Tas Rajut</span>
+                            <h3 class="font-mali text-xl font-bold text-hanara-dark mt-1">Aesthetic Hanara Sling Bag</h3>
+                        </div>
+                        <p class="text-xs text-hanara-dark/70 font-poppins leading-relaxed">
+                            Tas selempang mini bergaya vintage Jepang, sangat cocok dipadukan dengan outfit casual harian Anda. Muat HP, dompet & lipstik.
+                        </p>
+                        <div class="flex items-center justify-between pt-2">
+                            <div>
+                                <span class="text-xs line-through text-gray-400 block">Rp 189.000</span>
+                                <span class="font-mali font-bold text-hanara-red text-lg">Rp 129.000</span>
+                            </div>
+                            <span class="text-[10px] text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md font-semibold border border-emerald-100">Ready Stock</span>
+                        </div>
+                        <!-- Order Button -->
+                        <a href="https://wa.me/6281808014840?text=Halo%20Hanara%20Stitch!%20Saya%20tertarik%20dengan%20produk%20*Aesthetic%20Hanara%20Sling%20Bag%20(Rp%20129.000)*.%20Apakah%20stok%20ini%20tersedia?" 
+                           target="_blank"
+                           class="w-full bg-hanara-red hover:bg-hanara-pink text-white font-mali font-bold py-3 px-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Pesan Sekarang</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Teddy Bear Amigurumi -->
+                <div class="bg-hanara-cream rounded-3xl overflow-hidden shadow-md hover:shadow-xl border-2 border-hanara-lightPink hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="relative bg-white/50 border-b border-hanara-lightPink flex justify-center items-center h-64 overflow-hidden">
+                        <img src="assets/images/product_amigurumi.jpg" alt="Teddy Bear Huggy Amigurumi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-hanara-pink text-white text-[10px] font-mali font-bold px-3 py-1 rounded-full uppercase">Terpopuler</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <span class="text-xs text-hanara-pink font-semibold uppercase font-mali">Amigurumi</span>
+                            <h3 class="font-mali text-xl font-bold text-hanara-dark mt-1">Teddy Bear Amigurumi</h3>
+                        </div>
+                        <p class="text-xs text-hanara-dark/70 font-poppins leading-relaxed">
+                            Boneka rajut beruang super halus yang bisa dipeluk. Cocok sekali untuk kado kelulusan, ulang tahun anak, ataupun koleksi pajangan meja kamar.
+                        </p>
+                        <div class="flex items-center justify-between pt-2">
+                            <div>
+                                <span class="text-xs line-through text-gray-400 block">Rp 149.000</span>
+                                <span class="font-mali font-bold text-hanara-red text-lg">Rp 99.000</span>
+                            </div>
+                            <span class="text-[10px] text-amber-600 bg-amber-50 px-2 py-1 rounded-md font-semibold border border-amber-100">PO 3 Hari</span>
+                        </div>
+                        <!-- Order Button -->
+                        <a href="https://wa.me/6281808014840?text=Halo%20Hanara%20Stitch!%20Saya%20ingin%20memesan%20*Teddy%20Bear%20Huggy%20Amigurumi%20(Rp%2099.000)*.%20Bagaimana%20prosedur%20pemesanannya?" 
+                           target="_blank"
+                           class="w-full bg-hanara-red hover:bg-hanara-pink text-white font-mali font-bold py-3 px-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Pesan Sekarang</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3: Dreamy Knit Cardigan -->
+                <div class="bg-hanara-cream rounded-3xl overflow-hidden shadow-md hover:shadow-xl border-2 border-hanara-lightPink hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="relative bg-white/50 border-b border-hanara-lightPink flex justify-center items-center h-64 overflow-hidden">
+                        <img src="assets/images/product_cardigan.jpg" alt="Dreamy Knit Cardigan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-yellow-500 text-white text-[10px] font-mali font-bold px-3 py-1 rounded-full uppercase">Khas Hanara</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <span class="text-xs text-hanara-pink font-semibold uppercase font-mali">Knitwear</span>
+                            <h3 class="font-mali text-xl font-bold text-hanara-dark mt-1">Dreamy Stripe Cardigan</h3>
+                        </div>
+                        <p class="text-xs text-hanara-dark/70 font-poppins leading-relaxed">
+                            Cardigan rajut dengan bahan premium lembut yang hangat dan nyaman di kulit. Bergaya oversized kasual, menjaga Anda tetap modis di cuaca sejuk.
+                        </p>
+                        <div class="flex items-center justify-between pt-2">
+                            <div>
+                                <span class="text-xs line-through text-gray-400 block">Rp 450.000</span>
+                                <span class="font-mali font-bold text-hanara-red text-lg">Rp 349.000</span>
+                            </div>
+                            <span class="text-[10px] text-amber-600 bg-amber-50 px-2 py-1 rounded-md font-semibold border border-amber-100">PO 7 Hari</span>
+                        </div>
+                        <!-- Order Button -->
+                        <a href="https://wa.me/6281808014840?text=Halo%20Hanara%20Stitch!%20Saya%20tertarik%20membeli%20*Dreamy%20Stripe%20Knit%20Cardigan%20(Rp%20349.000)*.%20Boleh%20tahu%20pilihan%20warnanya?" 
+                           target="_blank"
+                           class="w-full bg-hanara-red hover:bg-hanara-pink text-white font-mali font-bold py-3 px-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Pesan Sekarang</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4: Everlasting Bouquet -->
+                <div class="bg-hanara-cream rounded-3xl overflow-hidden shadow-md hover:shadow-xl border-2 border-hanara-lightPink hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group">
+                    <div class="relative bg-white/50 border-b border-hanara-lightPink flex justify-center items-center h-64 overflow-hidden">
+                        <img src="assets/images/product_flowers.jpg" alt="Everlasting Crochet Bouquet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-[#DB4C4C]/10 text-[#DB4C4C] text-[10px] font-mali font-bold px-3 py-1 rounded-full uppercase">Kado Spesial</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div>
+                            <span class="text-xs text-hanara-pink font-semibold uppercase font-mali">Bouquet</span>
+                            <h3 class="font-mali text-xl font-bold text-hanara-dark mt-1">Everlasting Crochet Bouquet</h3>
+                        </div>
+                        <p class="text-xs text-hanara-dark/70 font-poppins leading-relaxed">
+                            Buket bunga rajut (mawar, tulip, daisy) manis dari palet warna Hanara. Hadiah abadi terbaik untuk wisuda, ulang tahun, atau hari jadi pasangan.
+                        </p>
+                        <div class="flex items-center justify-between pt-2">
+                            <div>
+                                <span class="text-xs line-through text-gray-400 block">Rp 195.000</span>
+                                <span class="font-mali font-bold text-hanara-red text-lg">Rp 129.000</span>
+                            </div>
+                            <span class="text-[10px] text-emerald-600 bg-emerald-50 px-2 py-1 rounded-md font-semibold border border-emerald-100">Ready Stock</span>
+                        </div>
+                        <!-- Order Button -->
+                        <a href="https://wa.me/6281808014840?text=Halo%20Hanara%20Stitch!%20Saya%20ingin%20memesan%20*Everlasting%20Crochet%20Bouquet%20(Rp%20129.000)*.%20Saya%20tertarik%20pesan%20banyak." 
+                           target="_blank"
+                           class="w-full bg-hanara-red hover:bg-hanara-pink text-white font-mali font-bold py-3 px-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Pesan Sekarang</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Quick WhatsApp Floating Note CTA under catalog -->
+            <div class="mt-16 bg-hanara-lightPink/40 border-2 border-dashed border-hanara-pink/60 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row justify-between items-center gap-6 max-w-4xl mx-auto relative overflow-hidden">
+                <div class="absolute inset-0 opacity-[0.04] brand-pattern"></div>
+                <div class="flex items-center gap-4 text-center md:text-left relative z-10">
+                    <div class="bg-white p-3 rounded-2xl text-hanara-red text-3xl shadow-sm"><i class="fa-solid fa-gift"></i></div>
+                    <div>
+                        <h4 class="font-mali font-bold text-lg text-hanara-dark">Ingin memesan model kustom di luar katalog?</h4>
+                        <p class="text-xs md:text-sm text-hanara-dark/80">Kirim foto contoh rajutan impianmu, kami akan wujudkan jahitannya.</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/6281808014840?text=Halo%20Hanara%20Stitch!%20Saya%20punya%20referensi%20foto%20rajutan%20sendiri%20dan%20ingin%20tanya%20apakah%20bisa%20dibuatkan." 
+                   target="_blank"
+                   class="whitespace-nowrap bg-hanara-pink hover:bg-hanara-red text-white font-mali font-bold px-6 py-3 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm shadow-md relative z-10">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Diskusikan Desainmu</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Brand Story & Identity Showcase -->
+    <section id="cerita" class="py-20 px-4 md:px-8 bg-hanara-lightPink/20 border-t border-hanara-lightPink overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                
+                <!-- Story Side -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-hanara-pink font-mali font-bold tracking-widest uppercase text-xs md:text-sm px-3 py-1 bg-white border border-hanara-lightPink rounded-full inline-block">Behind the Stitches</span>
+                    <h2 class="font-caveat text-5xl md:text-7xl text-hanara-red leading-tight">Kehangatan dalam Setiap Rajutan Hanara</h2>
+                    <div class="w-24 h-1 bg-hanara-pink rounded-full"></div>
+                    
+                    <p class="text-sm md:text-base text-hanara-dark/90 leading-relaxed font-poppins">
+                        Di <strong>HANARA Stitch</strong>, kami percaya bahwa setiap helai benang menceritakan kisah yang unik. Setiap produk dirajut secara manual oleh tangan terampil penuh dedikasi, menjamin tidak ada produk yang 100% identik di dunia ini—membuat setiap rajutan Anda terasa sangat personal dan berharga.
+                    </p>
+                    
+                    <p class="text-sm md:text-base text-hanara-dark/90 leading-relaxed font-poppins">
+                        Kami hanya menggunakan benang rajut premium anti-gatal dan mempertahankan standar warna harmonis sesuai dengan filosofi kelembutan brand kami. Hadiah istimewa untuk diri sendiri maupun orang tersayang.
+                    </p>
+
+                    <!-- Features bullets -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start gap-3">
+                            <div class="bg-white p-2.5 rounded-xl text-hanara-red shadow-sm border border-hanara-lightPink"><i class="fa-solid fa-gift"></i></div>
+                            <div>
+                                <h4 class="font-mali font-bold text-sm text-hanara-dark">Kemasan Estetis Kado</h4>
+                                <p class="text-xs text-hanara-dark/70">Tiap paket dilapisi box & tag hangat.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="bg-white p-2.5 rounded-xl text-hanara-red shadow-sm border border-hanara-lightPink"><i class="fa-solid fa-truck-fast"></i></div>
+                            <div>
+                                <h4 class="font-mali font-bold text-sm text-hanara-dark">Pengiriman Aman</h4>
+                                <p class="text-xs text-hanara-dark/70">Proteksi bubble wrap ganda menjaga bentuk rajutan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Showcase side representing stitches motif from brand assets -->
+                <div class="lg:col-span-5 bg-white p-8 rounded-3xl border-2 border-hanara-lightPink shadow-md relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-[0.08] brand-pattern"></div>
+                    <div class="relative z-10 text-center space-y-6">
+                        <h3 class="font-caveat text-3xl text-hanara-red">Filosofi Rajut Kami</h3>
+                        <img src="assets/brand/LOGO FIX.png" alt="Hanara Stitch Logo" class="w-56 h-auto mx-auto mb-4 float-animation">
+                        <p class="text-xs text-hanara-dark/80 font-poppins leading-relaxed">
+                            Mengikuti motif estetis benang (*yarn*), kait rajut, bunga, dan kupu-kupu yang melambangkan kebebasan kreasi dan keindahan alami dalam setiap baris simpul rajutan (*stitches*).
+                        </p>
+                        <div class="border-t border-hanara-lightPink/60 pt-4">
+                            <span class="font-mali font-bold text-xs text-hanara-red tracking-wider block uppercase">Dibuat Dengan Kasih Sayang</span>
+                            <span class="text-[10px] text-gray-400 block mt-1">Menggunakan Panduan Resmi Hanara Stitch</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Sticky / Bottom Floating Urgencies Call To Action -->
+    <section class="bg-hanara-red text-white py-16 px-4 md:px-8 text-center relative overflow-hidden">
+        <!-- Abstract pattern representation from brand guide background -->
+        <div class="absolute inset-0 opacity-[0.08] brand-pattern"></div>
+        <div class="max-w-4xl mx-auto space-y-6 relative z-10">
+            <h2 class="font-caveat text-5xl md:text-7xl">Miliki Rajutan Impianmu Sekarang!</h2>
+            <p class="font-mali max-w-xl mx-auto text-sm md:text-base text-white/90 leading-relaxed">
+                Dapatkan penawaran potongan harga spesial 15% untuk pemesanan pertama Anda hari ini. Hubungi langsung WhatsApp resmi kami.
+            </p>
+            <div class="pt-4">
+                <a href="https://wa.me/6281808014840?text=Halo%20Hanara%20Stitch!%20Saya%20melihat%20landing%20page%20dan%20tertarik%20untuk%20klaim%20diskon%20pemesanan%20pertama." 
+                   target="_blank"
+                   class="inline-flex items-center gap-3 bg-[#FFFBD3] hover:bg-white text-hanara-red font-mali font-bold px-10 py-5 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 text-lg md:text-xl">
+                    <i class="fa-brands fa-whatsapp text-3xl"></i>
+                    <span>Hubungi WA: 081808014840</span>
+                </a>
+            </div>
+            <p class="text-xs text-white/70 pt-2 font-poppins">Klik tombol di atas untuk langsung beralih ke aplikasi WhatsApp secara otomatis.</p>
+        </div>
+    </section>
+
+    <!-- Cozy Footer Section -->
+    <footer class="bg-hanara-dark text-hanara-cream py-12 px-4 md:px-8 border-t-2 border-hanara-pink/25">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            
+            <!-- Column 1: Brand Info -->
+            <div class="space-y-4">
+                <div class="flex items-center">
+                    <img src="assets/brand/LOGO FIX.png" alt="Logo Hanara Stitch" class="h-28 w-auto bg-white rounded-2xl p-3 shadow-sm border border-hanara-lightPink">
+                </div>
+                <p class="text-xs text-hanara-cream/75 leading-relaxed font-poppins">
+                    Rajutan buatan tangan premium dengan jaminan kerapihan terbaik. Menghadirkan kecantikan estetika pastel hangat ke dalam aktivitas keseharian Anda.
+                </p>
+            </div>
+
+            <!-- Column 2: Navigation Links -->
+            <div class="space-y-3">
+                <h4 class="font-mali font-bold text-sm text-white border-b border-hanara-pink/30 pb-2">Tautan Navigasi</h4>
+                <ul class="space-y-2 text-xs text-hanara-cream/80">
+                    <li><a href="#katalog" class="hover:text-white transition-colors"><i class="fa-solid fa-angle-right text-[8px] mr-1"></i> Katalog Produk</a></li>
+                    <li><a href="#cerita" class="hover:text-white transition-colors"><i class="fa-solid fa-angle-right text-[8px] mr-1"></i> Tentang Hanara</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact Info -->
+            <div class="space-y-3">
+                <h4 class="font-mali font-bold text-sm text-white border-b border-hanara-pink/30 pb-2">Kontak Hubung</h4>
+                <ul class="space-y-2 text-xs text-hanara-cream/80">
+                    <li class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-sm text-emerald-400"></i> WhatsApp: 0822-7849-7646</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-xs text-hanara-pink"></i> Email: halo@hanarastitch.com</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-xs text-hanara-pink"></i> Lokasi: Indonesia</li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Design Principles Checklist -->
+            <div class="space-y-3">
+                <h4 class="font-mali font-bold text-sm text-white border-b border-hanara-pink/30 pb-2">Keunggulan Layanan</h4>
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span class="bg-hanara-pink/20 text-hanara-pink border border-hanara-pink/40 px-2 py-0.5 rounded text-[10px] font-semibold">Benang Premium</span>
+                    <span class="bg-hanara-pink/20 text-hanara-pink border border-hanara-pink/40 px-2 py-0.5 rounded text-[10px] font-semibold">100% Handmade</span>
+                    <span class="bg-hanara-pink/20 text-hanara-pink border border-hanara-pink/40 px-2 py-0.5 rounded text-[10px] font-semibold">Desain Estetik</span>
+                    <span class="bg-hanara-pink/20 text-hanara-pink border border-hanara-pink/40 px-2 py-0.5 rounded text-[10px] font-semibold">Eco Friendly</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 border-t border-hanara-cream/10 text-center text-[11px] text-hanara-cream/50">
+            <p>&copy; 2026 HANARA Stitch. Semua Hak Cipta Dilindungi. Dibuat Menggunakan Panduan Desain Resmi.</p>
+        </div>
+    </footer>
+    
+    <!-- Floating Pulsing WhatsApp Button (Cozy Style) -->
+    <a href="https://wa.me/6281808014840?text=Halo%20Hanara%20Stitch!%20Saya%20tertarik%20melihat%20koleksi%20rajutan%20Anda." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95 group pulse-animation" 
+       aria-label="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+</body>
+</html>
